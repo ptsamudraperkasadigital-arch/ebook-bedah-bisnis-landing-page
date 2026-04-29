@@ -1,3 +1,19 @@
+// =============================================
+// META PIXEL — AddToCart Tracker
+// Fired setiap kali tombol beli diklik
+// =============================================
+function trackAddToCart() {
+  if (typeof fbq === 'function') {
+    fbq('track', 'AddToCart', {
+      content_name: 'Cara Praktis Bedah Bisnis',
+      content_ids: ['ebook-bedah-bisnis'],
+      content_type: 'product',
+      value: 149000,
+      currency: 'IDR'
+    });
+  }
+}
+
 // FAQ toggle
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;

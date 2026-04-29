@@ -9,6 +9,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  // Init semua 13 Pixel
+  fbq('init', '418738255169453');  // Hompimplay
+  fbq('init', '520138225624460');  // Hompimplay Official
+  fbq('init', '610250549956331');  // Hompimplay official's Pixel
+  fbq('init', '189690619845200');  // Sukakbisnis.id
+  fbq('init', '329806854705319');  // Hompimplay Pixel FB Mas shana
+  fbq('init', '1333093887200485'); // Akun Baru 2's Pixel
+  fbq('init', '602552764076110');  // Cosmore Pixel
+  fbq('init', '846333809899698');  // konsultan.grotivy's pixel baru
+  fbq('init', '769768064480863');  // Konsultant Grotivy Ad Account Baru
+  fbq('init', '3660700977484426'); // API PIXEL REAL PURCHASE
+  fbq('init', '354185456535364');  // Pixel Ryan
+  fbq('init', '1030649995175982'); // PIXEL BARU MEI 2025 GROTIVY
+  fbq('init', '633601179713855');  // Jual Produk Digital Mei
+
+  // PageView - terjadi saat landing page dibuka
+  fbq('track', 'PageView');
+
+  // ViewContent - tracking konten produk
+  fbq('track', 'ViewContent', {
+    content_name: 'Cara Praktis Bedah Bisnis',
+    content_ids: ['ebook-bedah-bisnis'],
+    content_type: 'product',
+    value: 149000,
+    currency: 'IDR'
+  });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=418738255169453&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -27,7 +70,7 @@
       <p class="hero-sub">
         Bukan soal kerja lebih keras — tapi <strong>kerja lebih tepat</strong>. Ebook <strong>Cara Praktis Bedah Bisnis</strong> mengajarkan cara mendiagnosa masalah bisnismu secara sistematis, menemukan akar masalahnya, dan bergerak ke solusi yang benar-benar berdampak.
       </p>
-      <a href="#pricing" class="btn-primary" id="hero-cta">Dapatkan Sekarang – Rp 149.000 →</a>
+      <a href="https://samudrastore.myscalev.com/checkout-page" class="btn-primary" id="hero-cta" target="_blank" onclick="trackAddToCart()">Dapatkan Sekarang – Rp 149.000 →</a>
       <p class="hero-guarantee">🔒 Garansi 7 Hari Uang Kembali · Akses Seumur Hidup</p>
       <div class="hero-stats">
         <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Pebisnis Terbantu</span></div>
@@ -365,7 +408,7 @@
           <li><span class="pi-check">✓</span> Akses Seumur Hidup</li>
           <li><span class="pi-check">✓</span> Garansi 7 Hari Uang Kembali</li>
         </ul>
-        <a href="https://samudrastore.myscalev.com/landing-page-baru" class="btn-primary btn-pricing" id="pricing-cta" target="_blank">
+        <a href="https://samudrastore.myscalev.com/checkout-page" class="btn-primary btn-pricing" id="pricing-cta" target="_blank" onclick="trackAddToCart()">
           YA! Saya Mau Invest Sekarang →
         </a>
         <div class="pricing-guarantee">
@@ -414,7 +457,7 @@
         <div class="urgency-item">🎁 Bonus Rp 1.35 Juta hanya untuk pembelian hari ini</div>
         <div class="urgency-item">🔒 Garansi 7 hari uang kembali</div>
       </div>
-      <a href="https://samudrastore.myscalev.com/landing-page-baru" class="btn-primary btn-final" id="final-cta-btn" target="_blank">
+      <a href="https://samudrastore.myscalev.com/checkout-page" class="btn-primary btn-final" id="final-cta-btn" target="_blank" onclick="trackAddToCart()">
         Dapatkan Cara Praktis Bedah Bisnis Sekarang →
       </a>
       <p class="final-price-note">Hanya <strong>Rp 149.000</strong> · Hemat Rp 101.000 · <em>Dari Stuck ke Scale Up</em></p>
