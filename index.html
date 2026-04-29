@@ -34,6 +34,7 @@
   fbq('init', '3660700977484426'); // API PIXEL REAL PURCHASE
   fbq('init', '354185456535364');  // Pixel Ryan
   fbq('init', '1030649995175982'); // PIXEL BARU MEI 2025 GROTIVY
+  fbq('init', '1030649995175962'); // PIXEL BARU MEI 2025 GROTIVY (verified)
   fbq('init', '633601179713855');  // Jual Produk Digital Mei
 
   // PageView - terjadi saat landing page dibuka
@@ -330,19 +331,25 @@
       <div class="bonus-grid">
         <div class="bonus-card" id="bonus-1">
           <div class="bonus-header"><div class="bonus-num">BONUS 1</div><div class="bonus-value">Nilai: Rp 350.000</div></div>
-          <div class="bonus-icon">🧮</div>
+          <div class="bonus-img-wrap">
+            <img src="bonus-hpp.png" alt="Aplikasi Hitung HPP" class="bonus-img" />
+          </div>
           <h3>Aplikasi Hitung HPP</h3>
-          <p>Template siap pakai untuk menghitung Harga Pokok Produksi dengan tepat. Jual dengan margin yang sehat, bukan asal tebak.</p>
+          <p>Template Google Sheets siap pakai untuk menghitung Harga Pokok Produksi dengan tepat. Jual dengan margin yang sehat, bukan asal tebak.</p>
         </div>
         <div class="bonus-card" id="bonus-2">
           <div class="bonus-header"><div class="bonus-num">BONUS 2</div><div class="bonus-value">Nilai: Rp 450.000</div></div>
-          <div class="bonus-icon">📋</div>
+          <div class="bonus-img-wrap">
+            <img src="bonus-sop.png" alt="SOP Departemen Lengkap" class="bonus-img" />
+          </div>
           <h3>SOP Departemen Lengkap</h3>
           <p>Koleksi SOP standar untuk semua departemen utama. Copy, sesuaikan, langsung terapkan di bisnismu hari ini.</p>
         </div>
         <div class="bonus-card" id="bonus-3">
           <div class="bonus-header"><div class="bonus-num">BONUS 3</div><div class="bonus-value">Nilai: Rp 550.000</div></div>
-          <div class="bonus-icon">👥</div>
+          <div class="bonus-img-wrap">
+            <img src="bonus-hrd.png" alt="Tools HRD Lengkap" class="bonus-img" />
+          </div>
           <h3>Tools HRD Lengkap</h3>
           <p>KPI HRD + SOP HRD + Form Tabel Gaji + Modul Interview. Semua untuk kelola SDM secara profesional.</p>
         </div>
@@ -355,6 +362,22 @@
         <div class="value-total"><span>Total Value</span><span class="value-total-price"><s>Rp 2.350.000</s></span></div>
         <div class="value-you-pay"><span>Kamu Bayar Hari Ini</span><span class="you-pay-price">Rp 149.000</span></div>
       </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN TIMER -->
+  <section class="countdown-section" id="countdown">
+    <div class="container">
+      <div class="countdown-label">⏰ Penawaran Harga Spesial Berakhir Dalam:</div>
+      <div class="countdown-wrap">
+        <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit">Jam</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cd-minutes">00</span><span class="cd-unit">Menit</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cd-seconds">00</span><span class="cd-unit">Detik</span></div>
+      </div>
+      <p class="countdown-sub">Setelah waktu habis, harga kembali ke <strong>Rp 250.000</strong> dan bonus senilai <strong>Rp 1.35 Juta</strong> tidak lagi tersedia.</p>
+      <a href="https://samudrastore.myscalev.com/checkout-page" class="btn-primary" id="countdown-cta" target="_blank" onclick="trackAddToCart()">Klaim Harga Spesial Sekarang →</a>
     </div>
   </section>
 

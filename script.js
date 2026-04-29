@@ -38,6 +38,39 @@ function updateSlot() {
 }
 updateSlot();
 
+// =============================================
+// COUNTDOWN TIMER — 24 jam dari kunjungan pertama
+// =============================================
+(function() {
+  const KEY = 'bedah_bisnis_deadline';
+  let deadline = localStorage.getItem(KEY);
+  if (!deadline) {
+    deadline = Date.now() + 24 * 60 * 60 * 1000;
+    localStorage.setItem(KEY, deadline);
+  }
+  deadline = parseInt(deadline);
+  function updateCountdown() {
+    let diff = deadline - Date.now();
+    if (diff <= 0) {
+      deadline = Date.now() + 24 * 60 * 60 * 1000;
+      localStorage.setItem(KEY, deadline);
+      diff = 24 * 60 * 60 * 1000;
+    }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const pad = n => String(n).padStart(2, '0');
+    const elH = document.getElementById('cd-hours');
+    const elM = document.getElementById('cd-minutes');
+    const elS = document.getElementById('cd-seconds');
+    if (elH) elH.textContent = pad(h);
+    if (elM) elM.textContent = pad(m);
+    if (elS) elS.textContent = pad(s);
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
