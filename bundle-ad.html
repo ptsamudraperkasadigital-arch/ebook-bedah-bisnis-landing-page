@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bundle Ad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .ad-canvas {
+      width: 1080px;
+      height: 1080px;
+      background: radial-gradient(circle at 50% 50%, #151b2b 0%, #07090f 100%);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .grid-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: linear-gradient(rgba(245, 184, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 184, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none;
+    }
+    .headline {
+      position: absolute; top: 80px; width: 100%; text-align: center; z-index: 10;
+    }
+    .headline h1 {
+      color: #fff; font-size: 58px; font-weight: 900; line-height: 1.2; text-transform: uppercase;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .headline span { color: #f5b800; }
+    
+    .bundle-container {
+      position: absolute; top: 260px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 500px; z-index: 5;
+    }
+    
+    .main-book {
+      position: absolute; left: 50%; transform: translateX(-50%); top: 0;
+      width: 320px; z-index: 3; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+    }
+    
+    .bonus-1 {
+      position: absolute; left: 40px; top: 120px; width: 260px; z-index: 2;
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); transform: rotate(-5deg);
+    }
+    .bonus-2 {
+      position: absolute; right: 40px; top: 120px; width: 260px; z-index: 2;
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); transform: rotate(5deg);
+    }
+    .bonus-3 {
+      position: absolute; left: 50%; top: 380px; transform: translateX(-50%); width: 260px; z-index: 4;
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+    }
+
+    .badge {
+      position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, #f5b800, #d49c00); padding: 15px 40px;
+      border-radius: 50px; font-size: 32px; font-weight: 800; color: #000;
+      box-shadow: 0 10px 20px rgba(245, 184, 0, 0.3); z-index: 10;
+      white-space: nowrap; border: 3px solid #fff;
+    }
+    
+    .cta {
+      position: absolute; bottom: 40px; width: 100%; text-align: center;
+      color: #a0a8b8; font-size: 22px; font-weight: 700; letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-canvas">
+    <div class="grid-overlay"></div>
+    <div class="headline">
+      <h1>Waktunya <span>Scale Up</span> Bisnismu!</h1>
+    </div>
+    
+    <div class="bundle-container">
+      <img src="bonus-hpp.png" class="bonus-1" alt="HPP">
+      <img src="bonus-sop.png" class="bonus-2" alt="SOP">
+      <img src="cover.jpg" class="main-book" alt="Cover">
+      <img src="bonus-hrd.png" class="bonus-3" alt="HRD">
+    </div>
+    
+    <div class="badge">+ 3 BONUS SPESIAL (Senilai Rp 1.35 Jt)</div>
+    
+    <div class="cta">KLIK LINK UNTUK MULAI BEDAH BISNISMU</div>
+  </div>
+</body>
+</html>
