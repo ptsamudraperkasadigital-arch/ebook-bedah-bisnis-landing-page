@@ -125,10 +125,7 @@
       btn.disabled = true;
       btn.style.opacity = "0.7";
 
-      // Track FB Pixel lead
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', { content_name: 'Free Ebook Lead', email: email });
-      }
+      // FB Pixel tracking pindah ke reader.html agar lebih akurat (hanya yg berhasil masuk yg jadi Lead)
 
       fetch(APPS_SCRIPT_URL, {
         method: "POST",
