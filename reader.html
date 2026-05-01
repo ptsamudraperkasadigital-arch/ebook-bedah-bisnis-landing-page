@@ -44,7 +44,9 @@
     <div class="pdf-container">
       <div class="pdf-label">📄 Smart Business Autopsy Framework — Edisi Trial</div>
       <p style="text-align: center; margin-bottom: 20px; font-weight: 600; font-size: 16px; color: var(--text);">Silakan langsung baca materinya di bawah ini 👇</p>
-      <div class="pdf-wrap">
+      <div class="pdf-wrap" style="position: relative;">
+        <!-- Overlay transparan untuk memblokir tombol download/pop-out Google Docs -->
+        <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: transparent; z-index: 999; cursor: default;"></div>
         <iframe
           src="https://docs.google.com/viewer?url=https://ebook.grotivyconsultant.my.id/ebook-gratis-trial.pdf&embedded=true"
           class="pdf-frame"
