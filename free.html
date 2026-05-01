@@ -26,8 +26,9 @@
   fbq('init', '354185456535364');
   fbq('init', '1030649995175982');
   fbq('init', '633601179713855');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent', { content_name: 'Free Ebook Lead Magnet', content_type: 'product' });
+  // Menggunakan trackCustom agar terpisah dari LP Berbayar
+  fbq('trackCustom', 'PageViewEbook');
+  fbq('trackCustom', 'ViewContentEbook', { content_name: 'Free Ebook Lead Magnet', content_type: 'product' });
   </script>
 </head>
 <body>

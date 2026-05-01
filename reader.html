@@ -15,10 +15,11 @@
   fbq('init','602552764076110');fbq('init','846333809899698');fbq('init','769768064480863');
   fbq('init','3660700977484426');fbq('init','354185456535364');fbq('init','1030649995175982');
   fbq('init','633601179713855');
-  fbq('track','PageView');
+  // Menggunakan trackCustom agar terpisah dari LP Berbayar
+  fbq('trackCustom', 'PageViewReaderEbook');
   
-  // Track Lead: Orang yang berhasil masuk ke halaman ini adalah Lead yang sah
-  fbq('track', 'Lead', { content_name: 'Free Ebook Access' });
+  // Track LeadEbook: Orang yang berhasil masuk ke halaman ini
+  fbq('trackCustom', 'LeadEbook', { content_name: 'Free Ebook Access' });
   </script>
 </head>
 <body>
@@ -140,7 +141,7 @@
 
     function trackBuy() {
       if (typeof fbq !== 'undefined') {
-        fbq('track','InitiateCheckout',{content_name:'Smart Business Autopsy Framework Full',value:293000,currency:'IDR'});
+        fbq('trackCustom', 'InitiateCheckoutEbook', { content_name: 'Smart Business Autopsy Framework Full', value: 293000, currency: 'IDR' });
       }
     }
   </script>
