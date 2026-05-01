@@ -10,6 +10,10 @@ var SHEET_NAME = "Leads";
 // Link download PDF gratis — upload ke Google Drive dulu lalu paste link-nya di sini
 var PDF_DOWNLOAD_URL = "GANTI_DENGAN_LINK_GOOGLE_DRIVE_PDF_GRATIS";
 
+// Konfigurasi WhatsApp API (Contoh menggunakan Fonnte - https://fonnte.com)
+// Biarkan kosong "" jika belum ada. Jika sudah punya, isi tokennya di dalam tanda kutip.
+var WA_API_TOKEN = ""; 
+
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
@@ -27,6 +31,28 @@ function doPost(e) {
     }
 
     sheet.appendRow([timestamp, nama, whatsapp, email, "Downloaded"]);
+
+    // --- FITUR AUTO WHATSAPP FOLLOW UP ---
+    if (WA_API_TOKEN !== "") {
+      try {
+        var waMessage = "Halo *" + nama + "*! 👋\n\nTerima kasih sudah membaca Edisi Trial *Smart Business Autopsy Framework*.\n\nJangan lupa dibaca dan dipraktikkan strategi Goal Setting & Market Sizenya ya!\n\nBtw, kalau bisnis kamu masih sering *stuck* dan mau langsung bedah semuanya (dari Keuangan, Sales, Operasional, sampai Tim), kamu bisa akses 26 Bab Lengkapnya di sini:\n👉 https://ebook.grotivyconsultant.my.id/\n\nMumpung masih harga promo Rp 293.000.\n\nSalam sukses,\n*Sam Adhiasta - Grotivy Consultant*";
+        
+        var options = {
+          "method": "post",
+          "headers": { "Authorization": WA_API_TOKEN },
+          "payload": {
+            "target": whatsapp,
+            "message": waMessage,
+            "countryCode": "62" // Fonnte otomatis menyesuaikan 08 jadi 628
+          },
+          "muteHttpExceptions": true
+        };
+
+        UrlFetchApp.fetch("https://api.fonnte.com/send", options);
+      } catch (waErr) {
+        // Abaikan error agar user tetap ter-redirect dengan sukses
+      }
+    }
 
     return ContentService
       .createTextOutput(JSON.stringify({
