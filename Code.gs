@@ -15,6 +15,7 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
     var nama = data.nama || "";
     var whatsapp = data.whatsapp || "";
+    var email = data.email || "";
     var timestamp = new Date().toLocaleString("id-ID", {timeZone: "Asia/Jakarta"});
 
     var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
@@ -22,10 +23,10 @@ function doPost(e) {
 
     // Buat header jika sheet masih kosong
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Nama", "WhatsApp", "Status"]);
+      sheet.appendRow(["Timestamp", "Nama", "WhatsApp", "Email", "Status"]);
     }
 
-    sheet.appendRow([timestamp, nama, whatsapp, "Downloaded"]);
+    sheet.appendRow([timestamp, nama, whatsapp, email, "Downloaded"]);
 
     return ContentService
       .createTextOutput(JSON.stringify({

@@ -81,6 +81,10 @@
               <label for="whatsapp">No. WhatsApp Aktif</label>
               <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 08123456789" required autocomplete="tel"/>
             </div>
+            <div class="input-group">
+              <label for="email">Alamat Email</label>
+              <input type="email" id="email" name="email" placeholder="Contoh: budi@gmail.com" required autocomplete="email"/>
+            </div>
             <button type="submit" class="btn-free" id="submit-btn">
               <span id="btn-text">AKSES PDF GRATIS SEKARANG →</span>
             </button>
@@ -107,7 +111,7 @@
 
   <script>
     // GANTI URL INI setelah kamu deploy Google Apps Script
-    var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxLwi9GUSFSmzbtS5D1klHsQ5QTktleThk-TO6n0ajNqYBoYcDhHinpNw-bULtBa3EZaw/exec";
+    var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzR37gRgr6qHGk-SCfV8M9Pn16fMm5eKNP3J56lsuj-KI8VACIegwKyCUph5TDp_Gf8-g/exec";
 
     function submitForm(e) {
       e.preventDefault();
@@ -115,6 +119,7 @@
       var btnText = document.getElementById('btn-text');
       var nama = document.getElementById('nama').value.trim();
       var whatsapp = document.getElementById('whatsapp').value.trim();
+      var email = document.getElementById('email').value.trim();
 
       btnText.textContent = "Memproses...";
       btn.disabled = true;
@@ -122,13 +127,13 @@
 
       // Track FB Pixel lead
       if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', { content_name: 'Free Ebook Lead' });
+        fbq('track', 'Lead', { content_name: 'Free Ebook Lead', email: email });
       }
 
       fetch(APPS_SCRIPT_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nama: nama, whatsapp: whatsapp })
+        body: JSON.stringify({ nama: nama, whatsapp: whatsapp, email: email })
       })
       .then(res => res.json())
       .then(data => {
