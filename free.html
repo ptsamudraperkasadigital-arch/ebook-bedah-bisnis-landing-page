@@ -35,13 +35,23 @@
   <section class="free-hero">
     <div class="free-bg-grid"></div>
     <div class="container">
-      <div class="free-badge">🎁 GRATIS — Tidak Perlu Kartu Kredit</div>
-      <h1 class="free-title">Bocoran <span class="gtext">4 Bab Pertama</span> Smart Business Autopsy Framework</h1>
-      <p class="free-sub">Ilmu yang sama dipakai ratusan pebisnis Indonesia untuk keluar dari jebakan "sibuk tapi stagnan". Baca langsung di browser kamu — selesai dalam 20 menit.</p>
 
-      <div class="free-split">
-        <div class="free-preview">
-          <div class="preview-label">📖 Yang kamu akan baca:</div>
+      <!-- Hero Top: Judul + Cover + Harga -->
+      <div class="free-top">
+        <div class="free-top-left">
+          <div class="free-badge">🎁 VERSI GRATIS — Terbatas untuk Hari Ini</div>
+          <h1 class="free-title">Smart Business Autopsy Framework</h1>
+          <p class="free-title-sub">Fast Track dari Stuck ke Scale Up</p>
+          <p class="free-sub">Ilmu bisnis dari A–Z yang sudah membantu 500+ pebisnis Indonesia keluar dari jebakan "sibuk tapi stagnan". Kamu akan mendapatkan <strong>4 bab pertama GRATIS</strong> — lengkap dengan action plan yang bisa langsung dipraktikkan.</p>
+
+          <!-- Price Display -->
+          <div class="price-block">
+            <span class="price-was">Rp 293.000</span>
+            <span class="price-arrow">→</span>
+            <span class="price-free">GRATIS</span>
+          </div>
+
+          <!-- Preview List -->
           <ul class="preview-list">
             <li><span class="check">✓</span> Kata Pengantar & Panduan Buku</li>
             <li><span class="check">✓</span> Bab 1: Konsep Dasar Harta & Rezeki</li>
@@ -50,27 +60,33 @@
             <li><span class="check">✓</span> Bab 4: Goal & Action Plan Bisnis Fast Track</li>
             <li class="locked"><span class="lock">🔒</span> Bab 5–26 (tersedia di versi lengkap)</li>
           </ul>
-          <div class="preview-note">⏱ Estimasi baca: 20–30 menit</div>
         </div>
 
-        <div class="free-form-wrap" id="form-section">
-          <div class="form-card">
-            <div class="form-title">Masukkan data kamu untuk<br/><strong>akses langsung sekarang</strong></div>
-            <form id="lead-form" onsubmit="submitForm(event)">
-              <div class="input-group">
-                <label for="nama">Nama Kamu</label>
-                <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required autocomplete="name"/>
-              </div>
-              <div class="input-group">
-                <label for="whatsapp">No. WhatsApp Aktif</label>
-                <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 08123456789" required autocomplete="tel"/>
-              </div>
-              <button type="submit" class="btn-free" id="submit-btn">
-                <span id="btn-text">BACA GRATIS SEKARANG →</span>
-              </button>
-              <p class="form-note">🔒 Data kamu aman. Tidak akan kami spam.</p>
-            </form>
+        <div class="free-top-right">
+          <div class="cover-glow-wrap">
+            <img src="hero-bundle.jpg" alt="Smart Business Autopsy Framework" class="free-cover-img" />
           </div>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="free-form-center">
+        <div class="form-card">
+          <div class="form-title">Masukkan data kamu untuk<br/><strong>akses langsung PDF-nya sekarang 👇</strong></div>
+          <form id="lead-form" onsubmit="submitForm(event)">
+            <div class="input-group">
+              <label for="nama">Nama Kamu</label>
+              <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required autocomplete="name"/>
+            </div>
+            <div class="input-group">
+              <label for="whatsapp">No. WhatsApp Aktif</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 08123456789" required autocomplete="tel"/>
+            </div>
+            <button type="submit" class="btn-free" id="submit-btn">
+              <span id="btn-text">AKSES PDF GRATIS SEKARANG →</span>
+            </button>
+            <p class="form-note">🔒 Data kamu aman. Tidak akan kami spam.</p>
+          </form>
         </div>
       </div>
 
